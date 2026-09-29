@@ -3,6 +3,7 @@
 ## Integrantes
 - Carvajal Martin
 - Torres Maximiliano
+- Santiago Barrionuevo
 
 ## Qué hace el bot
 
