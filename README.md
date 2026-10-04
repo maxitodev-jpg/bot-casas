@@ -1,9 +1,9 @@
 ## Bot de Casas
 
 ## Integrantes
+-Barrionuevo Santiago
 - Carvajal Martin
 - Torres Maximiliano
-- Santiago Barrionuevo
 
 ## Qué hace el bot
 
