@@ -5,6 +5,7 @@
 - Barrionuevo Santiago
 - Carvajal Martin
 - Moyano Florencia
+- Pepi Ignacio
 - Torres Maximiliano
 
 ## Qué hace el bot
