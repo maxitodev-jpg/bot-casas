@@ -1,4 +1,4 @@
-// Calcula los movimientos válidos
+// 
 function calcularDestino(fila, columna, direccion, dado) {
     if (direccion === "N") {
     return [(fila - dado + 10) % 10, columna];
@@ -25,14 +25,14 @@ function buscarCasas(tablero) {
     return casas;
 }
 
-// Mide la distancia más corta entre ficha y casa neutral.
+// Mide la distancia más corta entre dos puntos (incluso da la vuelta!!)
 function distancia(a, b) {
     const df = Math.min(Math.abs(a - b), 10 - Math.abs(a - b));
     return df;
 }
 
-// Elige una de las 4 direcciones posibles, la que deja a la ficha sobre una casa
-// o, si ninguna llega a una casa, la que la deja más cerca de la mas cercana.
+// Elige, una de las 4 direcciones posibles, la que deja a la ficha sobre una casa
+// o, si ninguna llega a una casa, la que la deja más cerca de la mas cercana
 function elegirDireccion(fila, columna, dado, casas) {
     const direcciones = ["N", "S", "E", "O"];
     let mejorDireccion = direcciones[0];
@@ -41,7 +41,7 @@ function elegirDireccion(fila, columna, dado, casas) {
     for (const direccion of direcciones) {
     const [f, c] = calcularDestino(fila, columna, direccion, dado);
 
-    // Si cae justo sobre una casa, es la mejor jugada posibles. Se elije esa.
+    // Si cae justo sobre una casa, es la mejor jugada posible: se elije esa
     const conquistaCasa = casas.some(([cf, cc]) => cf === f && cc === c);
     if (conquistaCasa) return direccion;
 
@@ -62,7 +62,8 @@ function elegirDireccion(fila, columna, dado, casas) {
 
     return mejorDireccion;
 }
-
+// función principal: recibe el estado del juego y devuelve qué dirección mueve cada ficha
+// ej: { A1: "N", A2: "O" }
 export function chooseMove(state) {
     const casas = buscarCasas(state.tablero);
     const movements = {};
@@ -70,6 +71,7 @@ export function chooseMove(state) {
     for (let fila = 0; fila < 10; fila++) {
     for (let columna = 0; columna < 10; columna++) {
         const cell = state.tablero[fila][columna];
+        // recorre el tablero, y por cada ficha nuestra le pide a elegirDireccion para dónde moverse y guarda todo en un objeto como {A1: "N", A2: "E"}
         if (cell.startsWith(state.jugador)) {
         movements[cell] = elegirDireccion(fila, columna, state.dado, casas);
         }
