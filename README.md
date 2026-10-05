@@ -4,6 +4,7 @@
 
 - Barrionuevo Santiago
 - Carvajal Martin
+- Moyano Florencia
 - Torres Maximiliano
 
 ## Qué hace el bot
