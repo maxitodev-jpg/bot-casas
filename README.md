@@ -2,7 +2,7 @@
 
 ## Integrantes
 
--Barrionuevo Santiago
+- Barrionuevo Santiago
 - Carvajal Martin
 - Torres Maximiliano
 
